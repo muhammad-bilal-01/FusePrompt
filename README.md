@@ -268,7 +268,8 @@ python parse_test_res.py output/base2new/test_new/eurosat/shots_16/FusePrompt/<c
 1. Install the environment and prepare all 11 datasets (above).
 2. Use the **default configuration**, which matches the paper (see [Hyperparameters](#hyperparameters)).
 3. Run **three seeds (1, 2, 3)** for every dataset. In the paper, tables report the best result across the three runs. The mean ± std over seeds is given in the supplementary material.
-4. For base-to-novel: run `base2new_train.sh` then `base2new_test.sh` for each dataset and seed. 5. For cross-dataset: train once on ImageNet, then run `xd_test.sh` for the 10 target datasets.
+4. For base-to-novel: run `base2new_train.sh` then `base2new_test.sh` for each dataset and seed.
+5. 5. For cross-dataset: train once on ImageNet, then run `xd_test.sh` for the 10 target datasets.
 6. Averages in the main table are taken over the 11 datasets.
 
 A simple loop to run everything for base-to-novel:

@@ -2,7 +2,6 @@
 
 [![Paper](https://img.shields.io/badge/Paper-Image%20and%20Vision%20Computing-blue)](#citation)
 [![Python](https://img.shields.io/badge/Python-3.8-green)](#installation)
-[![PyTorch](https://img.shields.io/badge/PyTorch-1.x-orange)](#installation)
 
 > **FusePrompt: A Prompt Fusion Framework for Vision-Language Adaptation**
 > Muhammad Bilal, Muhammad Shehzad Hanif, Muhammad Bilal, Wenxiong Kang, Arif Mahmood
@@ -56,7 +55,7 @@ FusePrompt runs two prompt learners over the same frozen CLIP:
 | Inspired by | PromptSRC | MaPLe |
 | Prompting | Shallow, independent vision and text prompts | Deep, coupled prompts across multiple layers (text prompts projected into vision prompts) |
 | Frozen text reference | Standard ImageNet templates (`g'^1`) | 50 paraphrased templates (`g'^2`) |
-| Frozen image reference | Frozen CLIP image features (`f'_CLIP`) shared by both branches | |
+| Frozen image reference | Frozen CLIP image features (`f'_CLIP`) shared by both branches | Frozen CLIP image features (`f'_CLIP`) shared by both branches |
 
 **Training objective**
 
@@ -104,7 +103,6 @@ L_diversity = L_image-diversity + λ3 · L_text-diversity
 | EuroSAT | 94.24 | 79.38 | 86.17 |
 | UCF101 | 88.83 | 80.91 | 84.69 |
 
-Results are the best across three independent seeds (1, 2, 3).
 </details>
 
 ### Individual branches vs. FusePrompt (average over 11 datasets)
@@ -270,8 +268,7 @@ python parse_test_res.py output/base2new/test_new/eurosat/shots_16/FusePrompt/<c
 1. Install the environment and prepare all 11 datasets (above).
 2. Use the **default configuration**, which matches the paper (see [Hyperparameters](#hyperparameters)).
 3. Run **three seeds (1, 2, 3)** for every dataset. In the paper, tables report the best result across the three runs. The mean ± std over seeds is given in the supplementary material.
-4. For base-to-novel: run `base2new_train.sh` then `base2new_test.sh` for each dataset and seed. The HM is `2·Base·Novel / (Base + Novel)`.
-5. For cross-dataset: train once on ImageNet, then run `xd_test.sh` for the 10 target datasets.
+4. For base-to-novel: run `base2new_train.sh` then `base2new_test.sh` for each dataset and seed. 5. For cross-dataset: train once on ImageNet, then run `xd_test.sh` for the 10 target datasets.
 6. Averages in the main table are taken over the 11 datasets.
 
 A simple loop to run everything for base-to-novel:

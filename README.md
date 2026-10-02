@@ -344,5 +344,4 @@ We thank the authors for making their code publicly available.
 
 For questions or issues, please open a [GitHub issue](https://github.com/muhammad-bilal-01/FusePrompt/issues) or contact:
 
-- Muhammad Bilal: msds23007@itu.edu.pk
 - Corresponding author: Muhammad Shehzad Hanif (mshanif@kau.edu.sa)
